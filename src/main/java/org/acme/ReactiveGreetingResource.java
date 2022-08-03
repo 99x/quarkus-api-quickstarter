@@ -8,7 +8,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/hello")
-@RolesAllowed("TRACE_CRUD_EVENT_PUBLISHER")
+//@RolesAllowed("TEST_ROLE")
 public class ReactiveGreetingResource {
 
     @Inject
