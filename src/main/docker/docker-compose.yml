@@ -1,0 +1,31 @@
+version: '3.1'
+#docker-compose down --volumes to clear database
+services:
+  db:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: platform
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - 5433:5432
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:15.0.2
+    volumes:
+      - ./imports:/opt/jboss/keycloak/imports
+    environment:
+      KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm-export.json -Dkeycloak.profile.feature.upload_scripts=enabled
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      DB_VENDOR: POSTGRES
+      DB_DATABASE: platform
+      DB_ADDR: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 1234
+    ports:
+      - 8080:8080
+      - 8443:8443
+    depends_on:
+      - db
