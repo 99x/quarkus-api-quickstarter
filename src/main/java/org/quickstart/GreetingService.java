@@ -1,4 +1,4 @@
-package org.acme;
+package org.quickstart;
 
 import javax.enterprise.context.ApplicationScoped;
 
