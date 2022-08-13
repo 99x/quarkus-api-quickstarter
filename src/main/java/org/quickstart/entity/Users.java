@@ -1,5 +1,7 @@
 package org.quickstart.entity;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -7,7 +9,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 public class Users extends PanacheEntity {
 
-    public int userId;
+    public UUID userId;
 
     public String name;
 
@@ -16,11 +18,11 @@ public class Users extends PanacheEntity {
     public Users() {
     }
 
-    public int getUserId() {
+    public UUID getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(UUID userId) {
         this.userId = userId;
     }
 
