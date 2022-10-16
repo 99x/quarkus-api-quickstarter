@@ -4,12 +4,28 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## Dependencies
+
+The application has dependencies to the following
+
+postgresql
+keycloak
+
+To initialize the dependecies you can run the bundled docker-compose file
+
+```shell script
+cd src/main/docker/
+docker-compose up
+```
+This will start keycloak in port 8080 and psql in port 5433
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
 ```shell script
 ./gradlew quarkusDev
 ```
+This will start the application in port 8082
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8082/q/dev/.
 
