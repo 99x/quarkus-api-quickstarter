@@ -8,8 +8,8 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 The application has dependencies to the following
 
-postgresql
-keycloak
+- postgresql
+- keycloak
 
 To initialize the dependecies you can run the bundled docker-compose file
 
@@ -17,7 +17,7 @@ To initialize the dependecies you can run the bundled docker-compose file
 cd src/main/docker/
 docker-compose up
 ```
-This will start keycloak in port 8080 and psql in port 5433
+This will start keycloak in port 8080 and postgresql in port 5433
 
 ## Running the application in dev mode
 
